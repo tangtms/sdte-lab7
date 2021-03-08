@@ -1,0 +1,8 @@
+- hosts: web
+  become: yes
+  tasks:
+  - name: "replace html"
+    replace:
+      path: /var/www/default/index.html
+      regexp: "61070084"
+      replace: 'from {{ inventory_hostname }}'
